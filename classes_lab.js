@@ -25,11 +25,11 @@ Call this method on both the instances you created in part a.`);
 
 
 Person.prototype.fullName = function (){
-    console.log(`\nThe full name of ${this.firstName} is: ${this.firstName} ${this.middleName} ${this.lastName}`); 
+    return `\nThe full name of ${this.firstName} is: ${this.firstName} ${this.middleName} ${this.lastName}`
 }
 
-Nelson.fullName();
-Voniel.fullName();
+console.log(Nelson.fullName());
+console.log(Voniel.fullName());
 
 // ## Question 2
 
@@ -81,7 +81,7 @@ Dog.prototype.feed = function() {
 }
 // d. Add a method called `toString` that returns a description of the dog:
 Dog.prototype.toString = function (){
-    console.log(`the name of the dog is: ${this.name} and it is ${this.mood}`);
+    return `the name of the dog is: ${this.name} and it is ${this.mood}`
 }
 // ## Question 4
 
@@ -98,7 +98,6 @@ Dog.prototype.toString = function (){
         fahrenheit: 32,
         kelvin: 273.2,
     }
-
 
  console.log(`\nQuestion 4b. Make a class called 'Celsius' that has one property: 'celsius', and two methods 
  'getFahrenheitTemp', and 'getKelvinTemp'.`);
@@ -152,10 +151,10 @@ let BeastOfNoNation = new Movie ('Beast of No Nation', 2015, 'drama','Idris elba
 console.log(`\nQuestion5b.Create an method inside 'Movie' called 'blurb' that returns a formatted string describing the movie.`);
 
 Movie.prototype.blurb = function (){
-    console.log(`\n${this.name} released in ${this.year} it was a ${this.genre} starring ${this.cast}, about ${this.description} `);
+    return `\n${this.name} released in ${this.year} it was a ${this.genre} starring ${this.cast}, about ${this.description} `;
     
 }
-BeastOfNoNation.blurb();
+console.log(BeastOfNoNation.blurb());
 // Ex: "Borat came out in 2006. It was an odd film starring Sacha Baron Cohen as a man named Borat who was visiting America from Kazakhstan."
 
 
@@ -200,9 +199,7 @@ class Vector {
     }
 
     getLength (){
-    //let point = Math.pow(this.x,2) + Math.pow(this.y,2)
     return Math.sqrt(Math.pow(this.x,2) + Math.pow(this.y,2))
-    //return Math.sqrt(point);
     }
 }
 
